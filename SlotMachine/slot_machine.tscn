@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dy22mqaoltpub"]
+[gd_scene load_steps=3 format=3 uid="uid://dy22mqaoltpub"]
 
 [ext_resource type="Texture2D" uid="uid://cj74f08lowa6o" path="res://SlotMachine/slotImage.png" id="1_oydg2"]
+[ext_resource type="Script" path="res://SlotMachine/slot.gd" id="2_vio27"]
 
 [node name="SlotMachine" type="Node2D"]
 
 [node name="Slot" type="Sprite2D" parent="."]
 position = Vector2(99, 117)
 texture = ExtResource("1_oydg2")
+script = ExtResource("2_vio27")
