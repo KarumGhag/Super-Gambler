@@ -6,6 +6,19 @@
 [node name="SlotMachine" type="Node2D"]
 
 [node name="Slot" type="Sprite2D" parent="."]
-position = Vector2(99, 117)
+position = Vector2(142.5, 159)
+scale = Vector2(2.5, 2.451)
+texture = ExtResource("1_oydg2")
+script = ExtResource("2_vio27")
+
+[node name="Slot2" type="Sprite2D" parent="."]
+position = Vector2(371, 161)
+scale = Vector2(2.5, 2.451)
+texture = ExtResource("1_oydg2")
+script = ExtResource("2_vio27")
+
+[node name="Slot3" type="Sprite2D" parent="."]
+position = Vector2(616, 163)
+scale = Vector2(2.5, 2.451)
 texture = ExtResource("1_oydg2")
 script = ExtResource("2_vio27")
