@@ -16,14 +16,19 @@ var timesSpun : int = 0
 func _ready() -> void:
 	genSpin()
 	add_child(spinCoolDown)
+	
 	spinCoolDown.autostart = false
 	spinCoolDown.one_shot = false
 	spinCoolDown.connect("timeout", spin)
+	
+	timePerSpin = randf_range(0.2, 0.35)
 	spinCoolDown.start(timePerSpin)
+
 	
 
 func genSpin() -> void:
-	timesToSpin = randi_range(0, 25)
+	timesToSpin = randi_range(5, 30)
+
 
 func spin() -> void:
 	currentColour = colours[nextColour]
@@ -31,6 +36,10 @@ func spin() -> void:
 	timesSpun += 1
 	if timesSpun >= timesToSpin:
 		spinCoolDown.stop()
+		return
+	timePerSpin *= 1.05
+	print(timePerSpin)
+	spinCoolDown.start(timePerSpin)
 
 func changeColour(newColour : Color):
 	currentColour = newColour
