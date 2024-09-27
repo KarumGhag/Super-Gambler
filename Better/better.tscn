@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c425b06rmp4j0"]
+
+[ext_resource type="Texture2D" uid="uid://dig8ohmgewhu5" path="res://RedChip.png" id="1_udxsf"]
+
+[node name="Better" type="Node2D"]
+
+[node name="RedChip" type="Sprite2D" parent="."]
+position = Vector2(293, 250)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_udxsf")
