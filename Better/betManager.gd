@@ -4,7 +4,6 @@ class_name BetManager
 
 var betAmount : int
 
-
 func addBet(value) -> void:
 	betAmount += value
 
