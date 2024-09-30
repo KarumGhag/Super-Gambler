@@ -37,6 +37,7 @@ func spin() -> void:
 	if timesSpun >= timesToSpin:
 		spinCoolDown.stop()
 		return
+		
 	timePerSpin *= 1.05
 	print(timePerSpin)
 	spinCoolDown.start(timePerSpin)

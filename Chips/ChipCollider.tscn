@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://wh8y7r7ww4rf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_742in"]
+radius = 49.2544
+
+[node name="ChipCollider" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_742in")
