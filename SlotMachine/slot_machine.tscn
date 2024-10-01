@@ -9,15 +9,13 @@
 script = ExtResource("1_s54yk")
 
 [node name="SlotHolder" type="Node2D" parent="." node_paths=PackedStringArray("slots", "spinButton", "slotMachine")]
-position = Vector2(290, 171)
 script = ExtResource("1_t723w")
 slots = [NodePath("Slot"), NodePath("Slot2"), NodePath("Slot3")]
 spinButton = NodePath("SpinButton")
 slotMachine = NodePath("..")
 
 [node name="Slot" type="Sprite2D" parent="SlotHolder" node_paths=PackedStringArray("resultTxt", "slotManager")]
-position = Vector2(-2, 0)
-scale = Vector2(2.5, 2.451)
+scale = Vector2(1.5, 1.471)
 texture = ExtResource("1_oydg2")
 script = ExtResource("2_vio27")
 resultTxt = NodePath("Label")
@@ -31,8 +29,8 @@ offset_bottom = 55.2317
 metadata/_edit_use_anchors_ = true
 
 [node name="Slot2" type="Sprite2D" parent="SlotHolder" node_paths=PackedStringArray("resultTxt", "slotManager")]
-position = Vector2(248, 0)
-scale = Vector2(2.5, 2.451)
+position = Vector2(150, 0)
+scale = Vector2(1.5, 1.471)
 texture = ExtResource("1_oydg2")
 script = ExtResource("2_vio27")
 resultTxt = NodePath("Label2")
@@ -46,8 +44,8 @@ offset_right = 8.4
 offset_bottom = 55.2317
 
 [node name="Slot3" type="Sprite2D" parent="SlotHolder" node_paths=PackedStringArray("resultTxt", "slotManager")]
-position = Vector2(498, 0)
-scale = Vector2(2.5, 2.451)
+position = Vector2(300, 0)
+scale = Vector2(1.5, 1.471)
 texture = ExtResource("1_oydg2")
 script = ExtResource("2_vio27")
 resultTxt = NodePath("Label3")
@@ -61,9 +59,9 @@ offset_right = 8.4
 offset_bottom = 55.2317
 
 [node name="SpinButton" type="Button" parent="SlotHolder"]
-offset_left = 127.0
-offset_top = 178.0
-offset_right = 378.0
-offset_bottom = 254.0
+offset_left = 106.0
+offset_top = 52.0
+offset_right = 199.0
+offset_bottom = 88.0
 text = "Spin
 "

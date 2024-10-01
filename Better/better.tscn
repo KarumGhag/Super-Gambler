@@ -16,6 +16,7 @@ script = ExtResource("1_bki5p")
 
 [node name="GreenChip" type="Sprite2D" parent="ChipHolder" node_paths=PackedStringArray("hitbox", "betManager")]
 position = Vector2(0, 1)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_mgciw")
 script = ExtResource("2_yi805")
 value = 20
@@ -25,7 +26,8 @@ betManager = NodePath("../..")
 [node name="ChipCollider" parent="ChipHolder/GreenChip" instance=ExtResource("3_bd303")]
 
 [node name="WhiteChip" type="Sprite2D" parent="ChipHolder" node_paths=PackedStringArray("hitbox", "betManager")]
-position = Vector2(150, 0)
+position = Vector2(75, 0)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_0xbca")
 script = ExtResource("2_yi805")
 value = 100
@@ -35,7 +37,8 @@ betManager = NodePath("../..")
 [node name="ChipCollider" parent="ChipHolder/WhiteChip" instance=ExtResource("3_bd303")]
 
 [node name="BlueChip" type="Sprite2D" parent="ChipHolder" node_paths=PackedStringArray("hitbox", "betManager")]
-position = Vector2(300, 0)
+position = Vector2(150, 0)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_hvscd")
 script = ExtResource("2_yi805")
 value = 200
@@ -45,7 +48,8 @@ betManager = NodePath("../..")
 [node name="ChipCollider" parent="ChipHolder/BlueChip" instance=ExtResource("3_bd303")]
 
 [node name="RedChip" type="Sprite2D" parent="ChipHolder" node_paths=PackedStringArray("hitbox", "betManager")]
-position = Vector2(450, 0)
+position = Vector2(225, 0)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_udxsf")
 script = ExtResource("2_yi805")
 value = 400

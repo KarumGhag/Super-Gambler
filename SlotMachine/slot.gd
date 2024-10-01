@@ -30,14 +30,10 @@ func _ready() -> void:
 	spinCoolDown.one_shot = false
 	spinCoolDown.connect("timeout", spin)
 	
-	
-	
-
-	
 
 func genSpin() -> void:
 	timesSpun = 0
-	timesToSpin = randi_range(5, 5)
+	timesToSpin = randi_range(5, 20)
 	timePerSpin = randf_range(0.15, 0.25)
 	spinCoolDown.start(timePerSpin)
 	slotManager.gotResults = false
