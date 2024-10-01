@@ -19,10 +19,16 @@ func _process(_delta) -> void:
 		if spinning[0] == false and spinning[1] == false and spinning[2] == false:
 			print(results)
 			check()
-		
+
+@export var slotMachine : Game
+
 func check() -> void:
 	if results[0] == results[1] and results[1] == results[2]:
-		print("won")
+		slotMachine.win()
+		gotResults = true
+		spinning = [null, null, null]
+	else:
+		slotMachine.lose()
 		gotResults = true
 		spinning = [null, null, null]
 

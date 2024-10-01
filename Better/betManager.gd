@@ -13,5 +13,9 @@ func takeBet(value) -> void:
 		return
 	betAmount -= value
 
-func _process(_delta) -> void:
-	print(betAmount)
+@export var game : Game
+
+@onready var moneySystem = get_node("/root/MoneySystem")
+
+func win() -> void:
+	moneySystem.win(betAmount)

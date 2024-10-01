@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxa8fgm7rlf2o"]
+
+[ext_resource type="PackedScene" uid="uid://dy22mqaoltpub" path="res://SlotMachine/slot_machine.tscn" id="1_6h5e3"]
+[ext_resource type="PackedScene" uid="uid://c425b06rmp4j0" path="res://Better/better.tscn" id="2_v34sl"]
+
+[node name="Casino" type="Node2D"]
+
+[node name="SlotMachine" parent="." instance=ExtResource("1_6h5e3")]
+position = Vector2(-19, 2)
+
+[node name="Better" parent="." node_paths=PackedStringArray("game") instance=ExtResource("2_v34sl")]
+position = Vector2(306, 543)
+game = NodePath("../SlotMachine")

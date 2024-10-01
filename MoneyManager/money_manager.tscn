@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwlsj03tc61di"]
+
+[ext_resource type="Script" path="res://MoneyManager/MoneyManager.gd" id="1_ej2ks"]
+
+[node name="MoneyManager" type="Node2D"]
+script = ExtResource("1_ej2ks")
+
+[node name="MoneyCounter" type="Label" parent="."]
+offset_right = 257.0
+offset_bottom = 105.0

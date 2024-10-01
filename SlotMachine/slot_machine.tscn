@@ -1,16 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://dy22mqaoltpub"]
+[gd_scene load_steps=5 format=3 uid="uid://dy22mqaoltpub"]
 
 [ext_resource type="Texture2D" uid="uid://cj74f08lowa6o" path="res://SlotMachine/slotImage.png" id="1_oydg2"]
+[ext_resource type="Script" path="res://GameManager/game.gd" id="1_s54yk"]
 [ext_resource type="Script" path="res://SlotMachine/SlotManager.gd" id="1_t723w"]
 [ext_resource type="Script" path="res://SlotMachine/slot.gd" id="2_vio27"]
 
 [node name="SlotMachine" type="Node2D"]
+script = ExtResource("1_s54yk")
 
-[node name="SlotHolder" type="Node2D" parent="." node_paths=PackedStringArray("slots", "spinButton")]
+[node name="SlotHolder" type="Node2D" parent="." node_paths=PackedStringArray("slots", "spinButton", "slotMachine")]
 position = Vector2(290, 171)
 script = ExtResource("1_t723w")
 slots = [NodePath("Slot"), NodePath("Slot2"), NodePath("Slot3")]
 spinButton = NodePath("SpinButton")
+slotMachine = NodePath("..")
 
 [node name="Slot" type="Sprite2D" parent="SlotHolder" node_paths=PackedStringArray("resultTxt", "slotManager")]
 position = Vector2(-2, 0)
