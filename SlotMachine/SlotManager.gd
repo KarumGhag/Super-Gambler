@@ -17,7 +17,7 @@ func _ready() -> void:
 func _process(_delta) -> void:
 	if not gotResults:
 		if spinning[0] == false and spinning[1] == false and spinning[2] == false:
-			print(results)
+			#print(results)
 			check()
 
 @export var slotMachine : Game
@@ -31,12 +31,13 @@ func check() -> void:
 		slotMachine.lose()
 		gotResults = true
 		spinning = [null, null, null]
+	print(results)
 
 func spin() -> void:
 	
 	if (spinning[0] == null and spinning[1] == null and spinning[2] == null) or (spinning[0] == false and spinning[1] == false and spinning[2] == false):
 		
 		for i in range(len(slots)):
-			print("spin")
+			#print("spin")
 			slots[i].genSpin()
 		

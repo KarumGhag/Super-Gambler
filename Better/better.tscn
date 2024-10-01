@@ -7,61 +7,51 @@
 [ext_resource type="PackedScene" uid="uid://wh8y7r7ww4rf" path="res://Chips/ChipCollider.tscn" id="3_bd303"]
 [ext_resource type="Texture2D" uid="uid://b0irc2wh24bcs" path="res://Chips/GreenChip.png" id="3_mgciw"]
 [ext_resource type="Texture2D" uid="uid://dxywpxdvfupnr" path="res://Chips/WhiteChip.png" id="4_0xbca"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3886h"]
-size = Vector2(10.5, 10)
+[ext_resource type="PackedScene" uid="uid://bt6hbkgeuj3sq" path="res://Better/mouse.tscn" id="8_wkkhu"]
 
 [node name="Better" type="Node2D"]
 script = ExtResource("1_bki5p")
 
 [node name="ChipHolder" type="Node2D" parent="."]
 
-[node name="GreenChip" type="Sprite2D" parent="ChipHolder" node_paths=PackedStringArray("hitbox", "mouseObj", "betManager")]
+[node name="GreenChip" type="Sprite2D" parent="ChipHolder" node_paths=PackedStringArray("hitbox", "betManager")]
 position = Vector2(0, 1)
 texture = ExtResource("3_mgciw")
 script = ExtResource("2_yi805")
 value = 20
 hitbox = NodePath("ChipCollider")
-mouseObj = NodePath("../../Mouse")
 betManager = NodePath("../..")
 
 [node name="ChipCollider" parent="ChipHolder/GreenChip" instance=ExtResource("3_bd303")]
 
-[node name="WhiteChip" type="Sprite2D" parent="ChipHolder" node_paths=PackedStringArray("hitbox", "mouseObj", "betManager")]
+[node name="WhiteChip" type="Sprite2D" parent="ChipHolder" node_paths=PackedStringArray("hitbox", "betManager")]
 position = Vector2(150, 0)
 texture = ExtResource("4_0xbca")
 script = ExtResource("2_yi805")
 value = 100
 hitbox = NodePath("ChipCollider")
-mouseObj = NodePath("../../Mouse")
 betManager = NodePath("../..")
 
 [node name="ChipCollider" parent="ChipHolder/WhiteChip" instance=ExtResource("3_bd303")]
 
-[node name="BlueChip" type="Sprite2D" parent="ChipHolder" node_paths=PackedStringArray("hitbox", "mouseObj", "betManager")]
+[node name="BlueChip" type="Sprite2D" parent="ChipHolder" node_paths=PackedStringArray("hitbox", "betManager")]
 position = Vector2(300, 0)
 texture = ExtResource("2_hvscd")
 script = ExtResource("2_yi805")
 value = 200
 hitbox = NodePath("ChipCollider")
-mouseObj = NodePath("../../Mouse")
 betManager = NodePath("../..")
 
 [node name="ChipCollider" parent="ChipHolder/BlueChip" instance=ExtResource("3_bd303")]
 
-[node name="RedChip" type="Sprite2D" parent="ChipHolder" node_paths=PackedStringArray("hitbox", "mouseObj", "betManager")]
+[node name="RedChip" type="Sprite2D" parent="ChipHolder" node_paths=PackedStringArray("hitbox", "betManager")]
 position = Vector2(450, 0)
 texture = ExtResource("1_udxsf")
 script = ExtResource("2_yi805")
 value = 400
 hitbox = NodePath("ChipCollider")
-mouseObj = NodePath("../../Mouse")
 betManager = NodePath("../..")
 
 [node name="ChipCollider" parent="ChipHolder/RedChip" instance=ExtResource("3_bd303")]
 
-[node name="Mouse" type="Area2D" parent="."]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse"]
-shape = SubResource("RectangleShape2D_3886h")
+[node name="Mouse" parent="." instance=ExtResource("8_wkkhu")]

@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" path="res://MoneyManager/MoneyManager.gd" id="1_ej2ks"]
 
-[node name="MoneyManager" type="Node2D"]
+[node name="MoneyManager" type="Node2D" node_paths=PackedStringArray("moneyCounter")]
 script = ExtResource("1_ej2ks")
+moneyCounter = NodePath("MoneyCounter")
 
 [node name="MoneyCounter" type="Label" parent="."]
 offset_right = 257.0

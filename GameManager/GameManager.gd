@@ -12,8 +12,3 @@ func win() -> void:
 	bet = betManager.betAmount
 	winAmount = bet * 2
 	moneyManager.money += winAmount
-
-func lose() -> void:
-	bet = betManager.betAmount
-	winAmount = -bet
-	moneyManager.money += winAmount

@@ -1,13 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxa8fgm7rlf2o"]
+[gd_scene load_steps=4 format=3 uid="uid://dxa8fgm7rlf2o"]
 
 [ext_resource type="PackedScene" uid="uid://dy22mqaoltpub" path="res://SlotMachine/slot_machine.tscn" id="1_6h5e3"]
 [ext_resource type="PackedScene" uid="uid://c425b06rmp4j0" path="res://Better/better.tscn" id="2_v34sl"]
+[ext_resource type="PackedScene" uid="uid://bt6hbkgeuj3sq" path="res://Better/mouse.tscn" id="3_bjk6o"]
 
 [node name="Casino" type="Node2D"]
 
-[node name="SlotMachine" parent="." instance=ExtResource("1_6h5e3")]
-position = Vector2(-19, 2)
+[node name="Mouse2" parent="." instance=ExtResource("3_bjk6o")]
 
-[node name="Better" parent="." node_paths=PackedStringArray("game") instance=ExtResource("2_v34sl")]
-position = Vector2(306, 543)
+[node name="SlotMachine" parent="." node_paths=PackedStringArray("better") instance=ExtResource("1_6h5e3")]
+position = Vector2(-19, 2)
+better = NodePath("../SlotBetter")
+
+[node name="SlotBetter" parent="." node_paths=PackedStringArray("game", "amountBetLabel", "mouse") instance=ExtResource("2_v34sl")]
+position = Vector2(291, 538)
 game = NodePath("../SlotMachine")
+amountBetLabel = NodePath("slotBet")
+mouse = NodePath("../Mouse2")
+
+[node name="slotBet" type="Label" parent="SlotBetter"]
+offset_left = 191.0
+offset_top = -99.0
+offset_right = 255.0
+offset_bottom = -55.0

@@ -36,11 +36,11 @@ func _ready() -> void:
 	
 
 func genSpin() -> void:
-	print("gen")
 	timesSpun = 0
-	timesToSpin = randi_range(5, 30)
+	timesToSpin = randi_range(5, 5)
 	timePerSpin = randf_range(0.15, 0.25)
 	spinCoolDown.start(timePerSpin)
+	slotManager.gotResults = false
 
 
 func spin() -> void:
