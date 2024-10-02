@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb562y02ju31c"]
+
+[ext_resource type="Script" path="res://GameManager/game.gd" id="1_00ul6"]
+[ext_resource type="Script" path="res://BlackJack/deck.gd" id="1_wp6js"]
+[ext_resource type="Script" path="res://BlackJack/blackjack_manager.gd" id="3_4md35"]
+
+[node name="Blackjack" type="Node2D"]
+script = ExtResource("1_00ul6")
+
+[node name="deck" type="Node2D" parent="."]
+script = ExtResource("1_wp6js")
+
+[node name="Hit" type="Button" parent="."]
+offset_left = 650.0
+offset_top = 444.0
+offset_right = 681.0
+offset_bottom = 475.0
+text = "Hit"
+
+[node name="Stand" type="Button" parent="."]
+offset_left = 447.0
+offset_top = 445.0
+offset_right = 500.0
+offset_bottom = 476.0
+text = "Stand
+"
+
+[node name="BlackjackManager" type="Node2D" parent="." node_paths=PackedStringArray("hitButton", "standButton", "deckManager")]
+script = ExtResource("3_4md35")
+hitButton = NodePath("../Hit")
+standButton = NodePath("../Stand")
+deckManager = NodePath("../deck")

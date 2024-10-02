@@ -14,7 +14,6 @@ var betAmount : int
 
 func _ready() -> void:
 	mouseObj = betManager.mouse
-	print(mouseObj)
 	hitbox.connect("area_entered", mouseTouching)
 	hitbox.connect("area_exited", mouseLeaving)
 

@@ -10,15 +10,15 @@
 
 [node name="SlotMachine" parent="." node_paths=PackedStringArray("better") instance=ExtResource("1_6h5e3")]
 position = Vector2(310, 246)
-better = NodePath("../SlotBetter")
+better = NodePath("SlotBetter")
 
-[node name="SlotBetter" parent="." node_paths=PackedStringArray("game", "amountBetLabel", "mouse") instance=ExtResource("2_v34sl")]
-position = Vector2(283, 145)
-game = NodePath("../SlotMachine")
+[node name="SlotBetter" parent="SlotMachine" node_paths=PackedStringArray("game", "amountBetLabel", "mouse") instance=ExtResource("2_v34sl")]
+position = Vector2(-27, -101)
+game = NodePath("..")
 amountBetLabel = NodePath("slotBet")
-mouse = NodePath("../Mouse2")
+mouse = NodePath("../../Mouse2")
 
-[node name="slotBet" type="Label" parent="SlotBetter"]
+[node name="slotBet" type="Label" parent="SlotMachine/SlotBetter"]
 offset_left = -21.0
 offset_top = -68.0
 offset_right = 155.0
