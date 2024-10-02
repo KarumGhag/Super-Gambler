@@ -95,6 +95,38 @@ func hit() -> void:
 
 func stand() -> void:
 	hasStood = true
+	showDealerCard()
+
+	if dealerValue > playerValue:
+		print("dealer higher")
+		newGame()
+		return
+	
+	while true:
+		dealerCards.append(deck[0])
+		midGameReset()
+		dealerValue = getValue(dealerCards)
+		if dealerValue > 21:
+			print("dealer bust, player wins")
+			newGame()
+			return
+
+		if dealerValue > playerValue:
+			print("dealer has higher number")
+			newGame()
+			return
+		
+		if dealerValue > 17:
+			break
+	
+	if dealerValue < playerValue:
+		print("player wins higher number")
+		
+
+
+func showDealerCard() -> void:
+	#will flip dealer card
+	pass
 
 func midGameReset() -> void:
 	#makes a temp store of the deck
@@ -120,8 +152,3 @@ func cantHitCheck() -> bool:
 		return false
 	else:
 		return true
-
-
-func bust() -> void:
-	print("Bust")
-	newGame()
