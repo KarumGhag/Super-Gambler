@@ -25,8 +25,51 @@ offset_bottom = 476.0
 text = "Stand
 "
 
-[node name="BlackjackManager" type="Node2D" parent="." node_paths=PackedStringArray("hitButton", "standButton", "deckManager")]
+[node name="NewGame" type="Button" parent="."]
+offset_left = 534.0
+offset_top = 445.0
+offset_right = 627.0
+offset_bottom = 476.0
+text = "New Game
+"
+
+[node name="BlackjackManager" type="Node2D" parent="." node_paths=PackedStringArray("hitButton", "standButton", "deckManager", "deckLabel", "playerLabel", "dealerLabel", "deckLen", "message", "newGameButton")]
 script = ExtResource("3_4md35")
 hitButton = NodePath("../Hit")
 standButton = NodePath("../Stand")
 deckManager = NodePath("../deck")
+deckLabel = NodePath("../Deck")
+playerLabel = NodePath("../PlayerValue")
+dealerLabel = NodePath("../DealerValue")
+deckLen = NodePath("../deckLen")
+message = NodePath("../message")
+newGameButton = NodePath("../NewGame")
+
+[node name="PlayerValue" type="Label" parent="."]
+offset_left = 378.0
+offset_top = 362.0
+offset_right = 418.0
+offset_bottom = 385.0
+
+[node name="DealerValue" type="Label" parent="."]
+offset_left = 663.0
+offset_top = 361.0
+offset_right = 703.0
+offset_bottom = 384.0
+
+[node name="Deck" type="Label" parent="."]
+offset_left = 1.0
+offset_top = 289.0
+offset_right = 580.0
+offset_bottom = 312.0
+
+[node name="deckLen" type="Label" parent="."]
+offset_top = 244.0
+offset_right = 579.0
+offset_bottom = 267.0
+
+[node name="message" type="Label" parent="."]
+offset_left = 264.0
+offset_top = 187.0
+offset_right = 843.0
+offset_bottom = 210.0
