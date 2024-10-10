@@ -1,8 +1,48 @@
-[gd_scene load_steps=4 format=3 uid="uid://cb562y02ju31c"]
+[gd_scene load_steps=44 format=3 uid="uid://cb562y02ju31c"]
 
 [ext_resource type="Script" path="res://GameManager/game.gd" id="1_00ul6"]
 [ext_resource type="Script" path="res://BlackJack/deck.gd" id="1_wp6js"]
 [ext_resource type="Script" path="res://BlackJack/blackjack_manager.gd" id="3_4md35"]
+[ext_resource type="Texture2D" uid="uid://vg78qqr41vs7" path="res://BlackJack/CardManager/Cards/hearts/10H.png" id="4_dbjt4"]
+[ext_resource type="Texture2D" uid="uid://b4rdfkdow0h2u" path="res://BlackJack/CardManager/Cards/spades/10S.png" id="5_wk5yr"]
+[ext_resource type="Texture2D" uid="uid://bs1ri8l6eu6of" path="res://BlackJack/CardManager/Cards/clubs/10C.png" id="6_oilrn"]
+[ext_resource type="Texture2D" uid="uid://ca0yeeboy2wcl" path="res://BlackJack/CardManager/Cards/hearts/9H.png" id="7_mc3cg"]
+[ext_resource type="Texture2D" uid="uid://dpxyg7u5o8ly8" path="res://BlackJack/CardManager/Cards/hearts/8H.png" id="8_m1eqa"]
+[ext_resource type="Texture2D" uid="uid://cgp18652oogy0" path="res://BlackJack/CardManager/Cards/hearts/7H.png" id="9_mrd0b"]
+[ext_resource type="Texture2D" uid="uid://cv4r1pvk1o4e1" path="res://BlackJack/CardManager/Cards/hearts/6H.png" id="10_dur1p"]
+[ext_resource type="Texture2D" uid="uid://borqertiutfms" path="res://BlackJack/CardManager/Cards/hearts/5H.png" id="11_3ayxj"]
+[ext_resource type="Texture2D" uid="uid://d08xnapd61q3d" path="res://BlackJack/CardManager/Cards/hearts/4H.png" id="12_x00iw"]
+[ext_resource type="Texture2D" uid="uid://dpj5kkvgb20l6" path="res://BlackJack/CardManager/Cards/hearts/3H.png" id="13_vaaoq"]
+[ext_resource type="Texture2D" uid="uid://ftxrffsydrcb" path="res://BlackJack/CardManager/Cards/hearts/2H.png" id="14_l782a"]
+[ext_resource type="Texture2D" uid="uid://burhs0tpdku4t" path="res://BlackJack/CardManager/Cards/hearts/AH.png" id="15_vcasj"]
+[ext_resource type="Texture2D" uid="uid://b1sg12m7f286i" path="res://BlackJack/CardManager/Cards/spades/8S.png" id="16_3sehi"]
+[ext_resource type="Texture2D" uid="uid://dhso7h0qaoowv" path="res://BlackJack/CardManager/Cards/spades/9S.png" id="17_u7r6l"]
+[ext_resource type="Texture2D" uid="uid://bbh8j1sjeb7pd" path="res://BlackJack/CardManager/Cards/spades/7S.png" id="19_7kt65"]
+[ext_resource type="Texture2D" uid="uid://ktqr7x8wc3s" path="res://BlackJack/CardManager/Cards/spades/6S.png" id="20_tqyp2"]
+[ext_resource type="Texture2D" uid="uid://c45k4olq24m2s" path="res://BlackJack/CardManager/Cards/spades/5S.png" id="21_0tgy7"]
+[ext_resource type="Texture2D" uid="uid://kvpltrbtkhsp" path="res://BlackJack/CardManager/Cards/spades/4S.png" id="22_com4x"]
+[ext_resource type="Texture2D" uid="uid://dxefd7e2auhgl" path="res://BlackJack/CardManager/Cards/spades/3S.png" id="23_bfw60"]
+[ext_resource type="Texture2D" uid="uid://jwbveriwhupx" path="res://BlackJack/CardManager/Cards/spades/2S.png" id="24_3tmqf"]
+[ext_resource type="Texture2D" uid="uid://dewghg5e507q3" path="res://BlackJack/CardManager/Cards/spades/AS.png" id="26_qnxmc"]
+[ext_resource type="Texture2D" uid="uid://cg6lcg86nnbpg" path="res://BlackJack/CardManager/Cards/clubs/9C.png" id="26_x333l"]
+[ext_resource type="Texture2D" uid="uid://cporxko67qs02" path="res://BlackJack/CardManager/Cards/clubs/7C.png" id="28_wyjbp"]
+[ext_resource type="Texture2D" uid="uid://bxtns5quh3oi4" path="res://BlackJack/CardManager/Cards/clubs/3C.png" id="29_uyfwo"]
+[ext_resource type="Texture2D" uid="uid://b5nqqnj4cn1a3" path="res://BlackJack/CardManager/Cards/clubs/8C.png" id="29_wy7ll"]
+[ext_resource type="Texture2D" uid="uid://p0jovod3it0i" path="res://BlackJack/CardManager/Cards/clubs/4C.png" id="30_bxnlf"]
+[ext_resource type="Texture2D" uid="uid://bxtlidud2me8" path="res://BlackJack/CardManager/Cards/clubs/6C.png" id="30_webg2"]
+[ext_resource type="Texture2D" uid="uid://csnircrxat08r" path="res://BlackJack/CardManager/Cards/clubs/5C.png" id="31_a36m0"]
+[ext_resource type="Texture2D" uid="uid://3aitf1t1yfoh" path="res://BlackJack/CardManager/Cards/clubs/2C.png" id="32_pyj34"]
+[ext_resource type="Texture2D" uid="uid://ceu6ndggmwyq6" path="res://BlackJack/CardManager/Cards/clubs/AC.png" id="33_8e84c"]
+[ext_resource type="Texture2D" uid="uid://ugo2ejt02yaj" path="res://BlackJack/CardManager/Cards/diamonds/10D.png" id="34_ytqfn"]
+[ext_resource type="Texture2D" uid="uid://b74npsoxdl4w1" path="res://BlackJack/CardManager/Cards/diamonds/9D.png" id="35_6yvct"]
+[ext_resource type="Texture2D" uid="uid://c0i2hl2wh66ay" path="res://BlackJack/CardManager/Cards/diamonds/8D.png" id="36_wigmr"]
+[ext_resource type="Texture2D" uid="uid://bc8s6svdjky6o" path="res://BlackJack/CardManager/Cards/diamonds/7D.png" id="37_clbcv"]
+[ext_resource type="Texture2D" uid="uid://b1s8b4u8gecxb" path="res://BlackJack/CardManager/Cards/diamonds/6D.png" id="38_bbx5d"]
+[ext_resource type="Texture2D" uid="uid://y8mjjb4oq4aj" path="res://BlackJack/CardManager/Cards/diamonds/5D.png" id="39_22u5j"]
+[ext_resource type="Texture2D" uid="uid://xjfymxb4h52p" path="res://BlackJack/CardManager/Cards/diamonds/4D.png" id="40_5oanf"]
+[ext_resource type="Texture2D" uid="uid://b5r6y3j8dh8ey" path="res://BlackJack/CardManager/Cards/diamonds/3D.png" id="41_un4s5"]
+[ext_resource type="Texture2D" uid="uid://dwf5jg7p43tvb" path="res://BlackJack/CardManager/Cards/diamonds/2D.png" id="42_lm08b"]
+[ext_resource type="Texture2D" uid="uid://reljsjyym662" path="res://BlackJack/CardManager/Cards/diamonds/AD.png" id="43_gcpog"]
 
 [node name="Blackjack" type="Node2D"]
 script = ExtResource("1_00ul6")
@@ -73,3 +113,171 @@ offset_left = 264.0
 offset_top = 187.0
 offset_right = 843.0
 offset_bottom = 210.0
+
+[node name="Hearts" type="Node2D" parent="."]
+
+[node name="10h" type="Sprite2D" parent="Hearts"]
+position = Vector2(63, 1182.5)
+texture = ExtResource("4_dbjt4")
+
+[node name="9h" type="Sprite2D" parent="Hearts"]
+position = Vector2(165, 1183.5)
+texture = ExtResource("7_mc3cg")
+
+[node name="8h" type="Sprite2D" parent="Hearts"]
+position = Vector2(267, 1182.5)
+texture = ExtResource("8_m1eqa")
+
+[node name="7h" type="Sprite2D" parent="Hearts"]
+position = Vector2(370, 1182.5)
+texture = ExtResource("9_mrd0b")
+
+[node name="6h" type="Sprite2D" parent="Hearts"]
+position = Vector2(472, 1182.5)
+texture = ExtResource("10_dur1p")
+
+[node name="5h" type="Sprite2D" parent="Hearts"]
+position = Vector2(574, 1182.5)
+texture = ExtResource("11_3ayxj")
+
+[node name="4h" type="Sprite2D" parent="Hearts"]
+position = Vector2(676, 1183.5)
+texture = ExtResource("12_x00iw")
+
+[node name="3h" type="Sprite2D" parent="Hearts"]
+position = Vector2(779, 1183.5)
+texture = ExtResource("13_vaaoq")
+
+[node name="2h" type="Sprite2D" parent="Hearts"]
+position = Vector2(882, 1183.5)
+texture = ExtResource("14_l782a")
+
+[node name="Ah" type="Sprite2D" parent="Hearts"]
+position = Vector2(986, 1183.5)
+texture = ExtResource("15_vcasj")
+
+[node name="8s" type="Sprite2D" parent="Hearts"]
+position = Vector2(270, 1371.5)
+texture = ExtResource("16_3sehi")
+
+[node name="Spades" type="Node2D" parent="."]
+
+[node name="10s" type="Sprite2D" parent="Spades"]
+position = Vector2(65, 1371.5)
+texture = ExtResource("5_wk5yr")
+
+[node name="9s" type="Sprite2D" parent="Spades"]
+position = Vector2(168, 1371.5)
+texture = ExtResource("17_u7r6l")
+
+[node name="7s" type="Sprite2D" parent="Spades"]
+position = Vector2(372, 1371.5)
+texture = ExtResource("19_7kt65")
+
+[node name="6s" type="Sprite2D" parent="Spades"]
+position = Vector2(475, 1371.5)
+texture = ExtResource("20_tqyp2")
+
+[node name="5s" type="Sprite2D" parent="Spades"]
+position = Vector2(578, 1371.5)
+texture = ExtResource("21_0tgy7")
+
+[node name="4s" type="Sprite2D" parent="Spades"]
+position = Vector2(681, 1370.5)
+texture = ExtResource("22_com4x")
+
+[node name="3s" type="Sprite2D" parent="Spades"]
+position = Vector2(782, 1369.5)
+texture = ExtResource("23_bfw60")
+
+[node name="2s" type="Sprite2D" parent="Spades"]
+position = Vector2(885, 1370.5)
+texture = ExtResource("24_3tmqf")
+
+[node name="As" type="Sprite2D" parent="Spades"]
+position = Vector2(989, 1371.5)
+texture = ExtResource("26_qnxmc")
+
+[node name="9c" type="Sprite2D" parent="Spades"]
+position = Vector2(169, 1561.5)
+texture = ExtResource("26_x333l")
+
+[node name="Clubs" type="Node2D" parent="."]
+
+[node name="10c" type="Sprite2D" parent="Clubs"]
+position = Vector2(64, 1560.5)
+texture = ExtResource("6_oilrn")
+
+[node name="8c" type="Sprite2D" parent="Clubs"]
+position = Vector2(272, 1561.5)
+texture = ExtResource("29_wy7ll")
+
+[node name="7c" type="Sprite2D" parent="Clubs"]
+position = Vector2(375, 1561.5)
+texture = ExtResource("28_wyjbp")
+
+[node name="6c" type="Sprite2D" parent="Clubs"]
+position = Vector2(477, 1561.5)
+texture = ExtResource("30_webg2")
+
+[node name="5c" type="Sprite2D" parent="Clubs"]
+position = Vector2(580, 1561.5)
+texture = ExtResource("31_a36m0")
+
+[node name="4c" type="Sprite2D" parent="Clubs"]
+position = Vector2(683, 1561.5)
+texture = ExtResource("30_bxnlf")
+
+[node name="3c" type="Sprite2D" parent="Clubs"]
+position = Vector2(786, 1562.5)
+texture = ExtResource("29_uyfwo")
+
+[node name="2c" type="Sprite2D" parent="Clubs"]
+position = Vector2(890, 1562.5)
+texture = ExtResource("32_pyj34")
+
+[node name="Ac" type="Sprite2D" parent="Clubs"]
+position = Vector2(993, 1563.5)
+texture = ExtResource("33_8e84c")
+
+[node name="Diamonds" type="Node2D" parent="."]
+
+[node name="10d" type="Sprite2D" parent="Diamonds"]
+position = Vector2(67, 1752)
+texture = ExtResource("34_ytqfn")
+
+[node name="9d" type="Sprite2D" parent="Diamonds"]
+position = Vector2(170, 1752)
+texture = ExtResource("35_6yvct")
+
+[node name="8d" type="Sprite2D" parent="Diamonds"]
+position = Vector2(273, 1752)
+texture = ExtResource("36_wigmr")
+
+[node name="7d" type="Sprite2D" parent="Diamonds"]
+position = Vector2(375, 1752)
+texture = ExtResource("37_clbcv")
+
+[node name="6d" type="Sprite2D" parent="Diamonds"]
+position = Vector2(479, 1752)
+texture = ExtResource("38_bbx5d")
+
+[node name="5d" type="Sprite2D" parent="Diamonds"]
+position = Vector2(583, 1752)
+texture = ExtResource("39_22u5j")
+
+[node name="4d" type="Sprite2D" parent="Diamonds"]
+position = Vector2(686, 1752)
+texture = ExtResource("40_5oanf")
+
+[node name="3d" type="Sprite2D" parent="Diamonds"]
+position = Vector2(791, 1753)
+texture = ExtResource("41_un4s5")
+
+[node name="2d" type="Sprite2D" parent="Diamonds"]
+position = Vector2(895, 1753)
+texture = ExtResource("42_lm08b")
+
+[node name="Ad" type="Sprite2D" parent="Diamonds"]
+position = Vector2(998, 1752)
+texture = ExtResource("43_gcpog")

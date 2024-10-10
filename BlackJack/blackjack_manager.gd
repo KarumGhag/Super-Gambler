@@ -34,9 +34,6 @@ func _ready():
 	#TEMPORARY
 	deckManager.cardValues.shuffle()
 	deck = deckManager.cardValues
-	newGame()
-	
-	
 	
 
 
@@ -45,13 +42,6 @@ func newGame() -> void:
 		print("in game")
 		return
 	hasStood = false
-	
-	#deckManager.cardValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
-	
-	
-	
-	
-	#print(len(deck))
 
 	playerCards = []
 	playerValue = 0
@@ -63,9 +53,6 @@ func newGame() -> void:
 
 	playerCards = getFirst2()
 	playerValue = getValue(playerCards)
-
-	#print(playerCards, playerValue)
-	#print(dealerCards, dealerValue)
 
 
 
@@ -109,10 +96,9 @@ func hit() -> void:
 
 
 	playerValue = getValue(playerCards)
-	#print(playerCards, playerValue)
 
+	#bust
 	if playerValue > 21:
-		#print("bust")
 		cardsToBottom(playerCards, dealerCards)
 		inGame = false
 
