@@ -52,18 +52,29 @@
 [ext_resource type="Texture2D" uid="uid://tfhjwmonhai2" path="res://BlackJack/CardImages/10-P.png" id="51_wauxc"]
 [ext_resource type="Texture2D" uid="uid://oknlbhydocop" path="res://BlackJack/CardImages/Q-P.png" id="53_ndrcb"]
 
-[node name="Blackjack" type="Node2D" node_paths=PackedStringArray("hitButton", "card", "deck")]
+[node name="Blackjack" type="Node2D" node_paths=PackedStringArray("hitButton", "standButton", "deck", "playerLabel", "dealerLabel", "playerCards", "dealerCards")]
 script = ExtResource("1_nrsu5")
 hitButton = NodePath("hit")
-card = NodePath("cardShower")
+standButton = NodePath("stand")
 deck = NodePath("deck")
+playerLabel = NodePath("playerTotal")
+dealerLabel = NodePath("dealerTotal")
+playerCards = [NodePath("playerCards/pos1"), NodePath("playerCards/pos2"), NodePath("playerCards/pos3"), NodePath("playerCards/pos4"), NodePath("playerCards/pos5")]
+dealerCards = [NodePath("dealerCards/pos1"), NodePath("dealerCards/pos2"), NodePath("dealerCards/pos3"), NodePath("dealerCards/pos4"), NodePath("dealerCards/pos5")]
 
 [node name="hit" type="Button" parent="."]
-offset_left = 339.0
-offset_top = 220.0
-offset_right = 368.0
-offset_bottom = 251.0
+offset_left = 1073.0
+offset_top = 443.0
+offset_right = 1102.0
+offset_bottom = 474.0
 text = "hit"
+
+[node name="stand" type="Button" parent="."]
+offset_left = 1073.0
+offset_top = 479.0
+offset_right = 1125.0
+offset_bottom = 510.0
+text = "stand"
 
 [node name="deck" type="Node2D" parent="." node_paths=PackedStringArray("cards", "ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "king", "queen")]
 script = ExtResource("1_wp6js")
@@ -279,6 +290,51 @@ texture = ExtResource("49_pv33j")
 position = Vector2(2034, 2761)
 texture = ExtResource("53_ndrcb")
 
-[node name="cardShower" type="Sprite2D" parent="."]
-position = Vector2(636, 294)
-texture = ExtResource("2_2etwt")
+[node name="playerCards" type="Node2D" parent="."]
+
+[node name="pos1" type="Sprite2D" parent="playerCards"]
+position = Vector2(257, 599)
+
+[node name="pos2" type="Sprite2D" parent="playerCards"]
+position = Vector2(378, 599)
+
+[node name="pos3" type="Sprite2D" parent="playerCards"]
+position = Vector2(498, 599)
+
+[node name="pos4" type="Sprite2D" parent="playerCards"]
+position = Vector2(618, 599)
+
+[node name="pos5" type="Sprite2D" parent="playerCards"]
+position = Vector2(738, 599)
+
+[node name="dealerCards" type="Node2D" parent="."]
+position = Vector2(0, -300)
+
+[node name="pos1" type="Sprite2D" parent="dealerCards"]
+position = Vector2(257, 599)
+
+[node name="pos2" type="Sprite2D" parent="dealerCards"]
+position = Vector2(378, 599)
+
+[node name="pos3" type="Sprite2D" parent="dealerCards"]
+position = Vector2(498, 599)
+
+[node name="pos4" type="Sprite2D" parent="dealerCards"]
+position = Vector2(618, 599)
+
+[node name="pos5" type="Sprite2D" parent="dealerCards"]
+position = Vector2(738, 599)
+
+[node name="playerTotal" type="Label" parent="."]
+offset_left = 906.0
+offset_top = 594.0
+offset_right = 995.0
+offset_bottom = 617.0
+text = "Your score: "
+
+[node name="dealerTotal" type="Label" parent="."]
+offset_left = 906.0
+offset_top = 284.0
+offset_right = 1008.0
+offset_bottom = 307.0
+text = "Dealer score: "

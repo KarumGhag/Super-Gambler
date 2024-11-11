@@ -23,10 +23,10 @@ var values : Array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 1, 2, 3, 4, 5, 6, 7
 var deck : Array = values
 var cardsShuffled : Array
 
-func _ready():
-	#shuffler(values)
+func _ready() -> void:
 
 	pass
+	#prints values 1 to 10 and 10 3 times, for the values array
 	#var x = 1
 	#var y = 0
 	#var values = []
@@ -45,20 +45,11 @@ func _ready():
 	
 	#print(values)
 
-func shuffler(value):
+func shuffler(value) -> Array:
 	value.shuffle()
 	
-	ace.shuffle()
-	two.shuffle()
-	three.shuffle()
-	four.shuffle()
-	five.shuffle()
-	six.shuffle()
-	eight.shuffle()
-	nine.shuffle()
-	ten.shuffle()
-	king.shuffle()
-	queen.shuffle()
+	for i in range(len(cardArrayArray)):
+		cardArrayArray[i].shuffle()
 
 	var tens : int = 0
 	var kings : int = 0
@@ -69,49 +60,49 @@ func shuffler(value):
 			cardsShuffled.append(ace[0])
 			ace[0] = ace[1]
 
-		if value[i] == 2:
+		elif value[i] == 2:
 			cardsShuffled.append(two[0])
 			two[0] = two[1]
 
-		if value[i] == 3:
+		elif value[i] == 3:
 			cardsShuffled.append(three[0])
 			three[0] = three[1]
 
-		if value[i] == 4:
+		elif value[i] == 4:
 			cardsShuffled.append(four[0])
 			four[0] = four[1]
 
-		if value[i] == 5:
+		elif value[i] == 5:
 			cardsShuffled.append(five[0])
 			five[0] = five[1]
 
-		if value[i] == 6:
+		elif value[i] == 6:
 			cardsShuffled.append(six[0])
 			six[0] = six[1]
 
-		if value[i] == 7:
+		elif value[i] == 7:
 			cardsShuffled.append(seven[0])
 			seven[0] = seven[1]
 
-		if value[i] == 8:
+		elif value[i] == 8:
 			cardsShuffled.append(eight[0])
 			eight[0] = eight[1]
 
-		if value[i] == 9:
+		elif value[i] == 9:
 			cardsShuffled.append(nine[0])
 			nine[0] = nine[1]
 
-		if value[i] == 10 and tens < 3:
+		elif value[i] == 10 and tens < 3:
 			cardsShuffled.append(ten[0])
 			ten[0] = ten[1]
 			tens += 1
 
-		if value[i] == 10 and kings < 3:
+		elif value[i] == 10 and kings < 3:
 			cardsShuffled.append(king[0])
 			king[0] = king[1]
 			kings += 1 
 
-		if value[i] == 10 and queens < 3:
+		elif value[i] == 10:
 			cardsShuffled.append(queen[0])
 			queen[0] = queen[1]
 			queens += 1
