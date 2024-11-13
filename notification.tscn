@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsfpcc5dtypp6"]
+
+[ext_resource type="Script" path="res://notification.gd" id="1_ik4ab"]
+
+[node name="notificiation" type="Node2D" node_paths=PackedStringArray("label")]
+script = ExtResource("1_ik4ab")
+label = NodePath("notifLabel")
+
+[node name="notifLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1

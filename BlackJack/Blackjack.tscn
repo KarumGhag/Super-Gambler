@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://cbfksjka3us7m"]
+[gd_scene load_steps=53 format=3 uid="uid://cbfksjka3us7m"]
 
 [ext_resource type="Script" path="res://BlackJack/blackjack.gd" id="1_nrsu5"]
 [ext_resource type="Script" path="res://BlackJack/deck.gd" id="1_wp6js"]
@@ -50,22 +50,26 @@
 [ext_resource type="Texture2D" uid="uid://bjmr3khqhxkbd" path="res://BlackJack/CardImages/K-P.png" id="49_pv33j"]
 [ext_resource type="Texture2D" uid="uid://1uic5rd26jp7" path="res://BlackJack/CardImages/9-P.png" id="50_dw1ul"]
 [ext_resource type="Texture2D" uid="uid://tfhjwmonhai2" path="res://BlackJack/CardImages/10-P.png" id="51_wauxc"]
+[ext_resource type="PackedScene" uid="uid://dsfpcc5dtypp6" path="res://notification.tscn" id="52_mlnnp"]
 [ext_resource type="Texture2D" uid="uid://oknlbhydocop" path="res://BlackJack/CardImages/Q-P.png" id="53_ndrcb"]
 
-[node name="Blackjack" type="Node2D" node_paths=PackedStringArray("hitButton", "standButton", "deck", "playerLabel", "dealerLabel", "playerCards", "dealerCards")]
+[node name="Blackjack" type="Node2D" node_paths=PackedStringArray("hitButton", "standButton", "deck", "playerLabel", "dealerLabel", "newGameButton", "playerCards", "dealerCards", "notifLocation")]
 script = ExtResource("1_nrsu5")
 hitButton = NodePath("hit")
 standButton = NodePath("stand")
 deck = NodePath("deck")
 playerLabel = NodePath("playerTotal")
 dealerLabel = NodePath("dealerTotal")
+newGameButton = NodePath("newGame")
 playerCards = [NodePath("playerCards/pos1"), NodePath("playerCards/pos2"), NodePath("playerCards/pos3"), NodePath("playerCards/pos4"), NodePath("playerCards/pos5")]
 dealerCards = [NodePath("dealerCards/pos1"), NodePath("dealerCards/pos2"), NodePath("dealerCards/pos3"), NodePath("dealerCards/pos4"), NodePath("dealerCards/pos5")]
+notifLabel = ExtResource("52_mlnnp")
+notifLocation = NodePath("NotifLocation")
 
 [node name="hit" type="Button" parent="."]
-offset_left = 1073.0
+offset_left = 1083.0
 offset_top = 443.0
-offset_right = 1102.0
+offset_right = 1112.0
 offset_bottom = 474.0
 text = "hit"
 
@@ -75,6 +79,13 @@ offset_top = 479.0
 offset_right = 1125.0
 offset_bottom = 510.0
 text = "stand"
+
+[node name="newGame" type="Button" parent="."]
+offset_left = 1053.0
+offset_top = 515.0
+offset_right = 1146.0
+offset_bottom = 546.0
+text = "New Game"
 
 [node name="deck" type="Node2D" parent="." node_paths=PackedStringArray("cards", "ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "king", "queen")]
 script = ExtResource("1_wp6js")
@@ -312,6 +323,7 @@ position = Vector2(0, -300)
 
 [node name="pos1" type="Sprite2D" parent="dealerCards"]
 position = Vector2(257, 599)
+texture = ExtResource("2_2etwt")
 
 [node name="pos2" type="Sprite2D" parent="dealerCards"]
 position = Vector2(378, 599)
@@ -338,3 +350,6 @@ offset_top = 284.0
 offset_right = 1008.0
 offset_bottom = 307.0
 text = "Dealer score: "
+
+[node name="NotifLocation" type="Node2D" parent="."]
+position = Vector2(550, 101)

@@ -24,9 +24,20 @@ var dealerTotal : int = 0
 @export var playerLabel : Label
 @export var dealerLabel : Label
 
+var madeCards : bool = true
+var gameOver : bool = true
+
+var red : Color = Color(255, 0, 0)
+var green : Color = Color(0, 255, 0)
+
+@export var newGameButton : Button
+
+var winMessage : String = "You won!"
+
 func _ready() -> void:
 	hitButton.connect("button_down", playerHit)
 	standButton.connect("button_down", stand)
+	newGameButton.connect("button_down", newGame)
 
 	#shuffles and gets the cards and values
 	shuffleReturn = deck.shuffler(values)
@@ -34,7 +45,7 @@ func _ready() -> void:
 	cardValues = shuffleReturn[1]
 
 	resetCards()
-	startGame()
+
 
 
 func playerHit() -> void:
@@ -67,7 +78,7 @@ func hit(dealer : bool) -> void:
 	#where the next card in list is
 	nextCardPos += 1
 
-	#loops it back f
+	#loops it back
 	if nextCardPos == len(cardImages):
 		nextCardPos = 0
 	
@@ -84,9 +95,12 @@ func hit(dealer : bool) -> void:
 func resetCards() -> void:
 	#sets all the textures of the player and dealer cards to null
 	playerTotal = 0
+	dealerTotal = 0
 	for i in range(len(playerCards)):
 		playerCards[i].texture = null
 		dealerCards[i].texture = null
+
+	
 
 
 func addCard(toCheck : Array) -> void:
@@ -119,6 +133,7 @@ func addCard(toCheck : Array) -> void:
 	
 	#if the dealer just hit and they can still hit they hit again
 	if ((toCheck == dealerCards) and dealerHitCheck()) and hasStood:
+		await wait(0.5)
 		hit(true)
 
 	
@@ -126,21 +141,33 @@ func addCard(toCheck : Array) -> void:
 @export var dealerCards : Array[Sprite2D]
 
 func startGame() -> void:
+	gameOver = false
+	madeCards = false
+	resetCards()
 
-	hit(true)
+	winMessage = "You won!"
+
 	await wait(0.5)
-	hit(true)
-	await wait(0.5)
-	hit(false)
-	await wait(0.5)
-	hit(false)
 	
+	#2 dealer hits and 2 player hits
+	hit(true)
+	await wait(0.2)
+	hit(true)
+	await wait(0.2)
+	hit(false)
+	await wait(0.2)
+	hit(false)
+	madeCards = true
+	
+	for i in range(len(dealerCards)):
+		print(dealerCards[i].texture)
+		print(playerCards[i].texture)
 
 	#print(dealerTotal)
 	#print(playerTotal)
 
 	if playerTotal == 21:
-		print("blackJack!")
+		winMessage = "BLACKJACK!"
 		win()
 		return
 
@@ -152,19 +179,23 @@ func dealerHitCheck() -> bool:
 
 	return true
 
-func checkWinner():
+func checkWinner() -> void:
+	#without this the cards will be checked before they are made so you instantly loose and game breaks
+	if not madeCards:
+		return
+
 	if dealerTotal > playerTotal:
 		lose()
 		return
 	win()
 
 func win() -> void:
-	print("win")
-	resetCards()
+	notif(winMessage + " Press new game", green, 1)
+	gameOver = true
 
 func lose() -> void:
-	print("lost")
-	resetCards()
+	notif("You lost! Press new game", red, 1)
+	gameOver = true
 
 
 func _process(_delta):
@@ -174,4 +205,26 @@ func _process(_delta):
 
 func wait(seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout
+
+
+@export var notifLabel : PackedScene
+@export var notifLocation : Node2D
+
+func notif(message : String, colour : Color, fallSpeed : float) -> void:
+	var notifInst = notifLabel.instantiate()
+	notifInst.message = message
+	notifInst.setColour(colour)
+	notifInst.global_position = notifLocation.global_position
+	notifInst.fallSpeed = fallSpeed
+	get_tree().get_root().add_child(notifInst)
+
+
+func newGame() -> void:
+	if not gameOver:
+		notif("You must finish this game!", red, 5)
+		return
 	
+	gameOver = false
+	notif("Game starting", green, 5)
+	await wait(0.2)
+	startGame()
